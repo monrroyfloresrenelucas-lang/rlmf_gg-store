@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - GG Store</title>
+    <link rel="stylesheet" href="../csshub/styles-presupuestos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">GG Store</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="galeria.html">Catálogo</a>
+            <a href="Presupuestos.html" class="active">Cesta</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="checkout">
+            <div class="checkout-left">
+                <h2>Productos desde la Galería</h2>
+                <div id="cart-items"></div>
+
+                <div class="gateway-section">
+                    <h3>Añadir Productos desde Galería</h3>
+                    <div class="gateway-row">
+                        <select id="select-product">
+                            <option value="">Selecciona un producto</option>
+                        </select>
+                        <input type="number" id="product-qty" value="1" min="1" style="width: 60px; margin-left: 10px;">
+                        <button onclick="addToBudget()" style="background: #6633df; border: none; padding: 8px 15px; color: white; border-radius: 5px;">Añadir</button>
+                    </div>
+                </div>
+                <div class="gateway-section">
+                    <h3>Seleccionar Tipo de Envío</h3>
+                    <div class="gateway-row">
+                        <select id="select-extra">
+                            <option value="">Selecciona envío</option>
+                            <option value="recogida">Recogida - GRATIS</option>
+                            <option value="mrw">Entrega el mismo día - 14,00€</option>
+                            <option value="gls">Entrega la mañana siguiente - 8,40€</option>
+                            <option value="nacex">Entrega en 2 y 3 días - 5,65€</option>
+                        </select>
+                        <button onclick="applyShipping()" style="background: #6633df; border: none; padding: 8px 15px; color: white; border-radius: 5px;">Aplicar Envío</button>
+                    </div>
+                </div>
+                <div class="gateway-section">
+                    <h3>Resumen de Precios</h3>
+                    <p>Subtotal: <span id="subtotal">0,00€</span></p>
+                    <p>Envío: <span id="shipping">0,00€</span></p>
+                    <p>IVA (12% sobre productos): <span id="tax">0,00€</span></p>
+                    <p>Total: <span id="total">0,00€ IVA inc</span></p>
+                </div>
+            </div>
+            <div class="checkout-right">
+                <div class="step">
+                    <h3>1. Datos Personales</h3>
+                    <div class="personal-data"> 
+                        <label><input type="text" id="nombre" placeholder="Nombre" required></label>
+                        <label><input type="text" id="apellidos" placeholder="Apellidos" required></label>
+                        <label><input type="text" id="numero" placeholder="Número" required></label>
+                        <label><input type="email" id="email" placeholder="Email" required></label>
+                    </div>
+                </div>
+                <div class="step">
+                    <h3>2. Dirección de Envío</h3>
+                    <div class="personal-data">
+                        <label><input type="text" id="direccion" placeholder="Calle, número, ciudad" required></label>
+                        <label><input type="text" id="codigo-postal" placeholder="Código postal" required></label>
+                        <label>
+                            <select id="pais" required>
+                                <option value="">Selecciona un país</option>
+                                <option value="EÑ">España</option>
+                                <option value="PL">Portugal</option>
+                                <option value="MX">México</option>
+                                <option value="AD">Canadá</option>
+                                <option value="AG">Argentina</option>
+                                <option value="BL">Brasil</option>
+                                <option value="CH">Chile</option>
+                                <option value="CO">Colombia</option>
+                                <option value="PU">Perú</option>
+                                <option value="VZ">Venezuela</option>
+                                <option value="ER">Ecuador</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="UG">Uruguay</option>
+                                <option value="BV">Bolivia</option>
+                                <option value="CR">Costa Rica</option>
+                                <option value="SV">El Salvador</option>
+                                <option value="GT">Guatemala</option>
+                                <option value="HN">Honduras</option>
+                                <option value="NI">Nicaragua</option>
+                                <option value="PM">Panamá</option>
+                                <option value="RD">República Dominicana</option>
+                                <option value="FR">Francia</option>
+                                <option value="AA">Alemania</option>
+                                <option value="IT">Italia</option>
+                                <option value="UK">Reino Unido</option>
+                                <option value="JP">Japón</option>
+                                <option value="CB">Cuba</option>
+                                <option value="EU">Estados Unidos</option>
+                                <option value="ML">Malasia</option>
+                                <option value="AS">Austria</option>
+                                <option value="LN">Tailandia</option>
+                                <option value="GC">Grecia</option>
+                                <option value="TQ">Turquia</option>
+                                <option value="VT">Vietnam</option>
+                                <option value="PL">Polonia</option>
+                                <option value="MR">Marruecos</option>
+                                <option value="CS">Corea del sur</option>
+                                <option value="EG">Egipto</option>
+                                <option value="HN">Hungria</option>
+                                <option value="AL">Albania</option>
+                                <option value="TZ">Túnez</option>
+                                <option value="SF">Sudáfrica</option>
+                                <option value="SC">Suecia</option>
+                                <option value="BR">Bulgaria</option>
+                                <option value="AU">Australia</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="IN">Irán</option>
+                                <option value="CM">Camboya</option>
+                                <option value="FS">Filipinas</option>
+                                <option value="RR">Andorra</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="step">
+                    <h3>3. Método de Pago</h3>
+                    <div class="payment-methods">
+                        <label class="payment-method"><input type="radio" name="pago" value="tarjeta"> Tarjeta</label>
+                        <label class="payment-method"><input type="radio" name="pago" value="bizum"> Bizum</label>
+                        <label class="payment-method"><input type="radio" name="pago" value="transferencia"> Transferencia</label>
+                        <label class="payment-method"><input type="radio" name="pago" value="plazos"> Pago a plazos</label>
+                    </div>
+                    <label><input type="checkbox" id="terminos" required><a href="Aviso-legal.html"> He leído y consiento los términos y condiciones</a></label>
+                    <button class="checkout-btn" onclick="procesarPresupuesto()">REALIZAR PRESUPUESTO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Catálogo</a></li>
+                    <li><a href="Presupuestos.html">Cesta</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>   
+                </ul>
+            </div>  
+            <div class="footer-section">
+                <h3>Quiénes somos</h3>
+                <p>Llámanos ahora: +34 958 289 961</p>
+                <p><a>info@ggstore.es</a></p>
+                <p><a href="Aviso-legal.html">Aviso Legal</a></p>
+            </div>            
+            <div class="footer-section">
+                <div class="social-media">
+                     <a href="https://www.facebook.com/ggstorem/?locale=es_LA" class="social-link"><img src="../galeryhub/facebook.webp" alt="Facebook" id="facebook-link"></a>
+                     <a href="https://x.com/ggstore_store" class="social-link"><img src="../galeryhub/x.webp" alt="X" id="x-link"></a>
+                     <a href="https://www.instagram.com/ggstore.ar/" class="social-link"><img src="../galeryhub/instagram.webp" alt="Instagram" id="instagram-link"></a>
+                     <a href="https://www.linkedin.com/company/ggstore-net/?viewAsMember=true" class="social-link"><img src="../galeryhub/linkedin.webp" alt="LinkedIn" id="linkedin-link"></a>
+                </div>    
+                <div class="location">
+                    <h3>CENTRAL EN GRANADA</h3>
+                    <p>Calle Cristo de la Yedra</p>
+                    <p>Albaicín, 18012 Granada</p>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2025 GG Store. Hecho por René lucas monrroy flores.</p>
+    </footer>
+    <script src="../jshub/presupuesto_js.js"></script>
+    <script src="../jshub/cart.js"></script>
+</body>
+</html>

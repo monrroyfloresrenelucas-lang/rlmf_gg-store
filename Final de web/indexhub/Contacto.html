@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto-GG_Store</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../csshub/styles-contacto.css">
+    <style>
+        #map { height: 450px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GG Store</div>
+        <nav>
+    <a href="Index.html">Inicio</a>
+    <a href="galeria.html">Catálogo</a>
+    <a href="Presupuestos.html">Cesta</a>
+    <a href="Contacto.html" class="active">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-container">
+            <div class="contact-left">
+                <h2>DÉJANOS TUS DATOS</h2>
+                <p>Permítanos ser el comienzo de lo que más te va de tu vida. Por favor, déjanos tus datos para contactarte y comenzar a conocer a alguien que pueda ser el amor de tu vida. Mapas.</p>
+                <form>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" maxlength="15" required><br>
+                    <label for="apellidos">Apellidos:</label><br>
+                    <input type="text" id="apellidos" name="apellidos" maxlength="40" required><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="numero">Numero de telefono:</label><br>
+                    <input type="text" id="numero" name="numero" maxlength="9" required><br>
+                    <label for="país">País:</label><br>
+                    <select id="país">
+                    <option value="">Selecciona un país</option>    
+                    <option value="PL">Portugal</option>
+                    <option value="MX">México</option>
+                    <option value="AD">Canadá</option>
+                    <option value="AG">Argentina</option>
+                    <option value="BL">Brasil</option>
+                    <option value="CH">Chile</option>
+                    <option value="CO">Colombia</option>
+                    <option value="PU">Perú</option>
+                    <option value="VZ">Venezuela</option>
+                    <option value="ER">Ecuador</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="UG">Uruguay</option>
+                    <option value="BV">Bolivia</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="HN">Honduras</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="PM">Panamá</option>
+                    <option value="RD">República Dominicana</option>
+                    <option value="EÑ">España</option>
+                    <option value="FR">Francia</option>
+                    <option value="AA">Alemania</option>
+                    <option value="IT">Italia</option>
+                    <option value="UK">Reino Unido</option>
+                    <option value="JP">Japón</option>
+                    <option value="CB">Cuba</option>
+                    <option value="EU">Estados Unidos</option>
+                    <option value="ML">Malasia</option>
+                    <option value="AS">Austria</option>
+                    <option value="LN">Tailandia</option>
+                    <option value="GC">Grecia</option>
+                    <option value="TQ">Turquia</option>
+                    <option value="VT">Vietnam</option>
+                    <option value="PL">Polonia</option>
+                    <option value="MR">Marruecos</option>
+                    <option value="CS">Corea del sur</option>
+                    <option value="EG">Egipto</option>
+                    <option value="HN">Hungria</option>
+                    <option value="AL">Albania</option>
+                    <option value="TZ">Túnez</option>
+                    <option value="SF">Sudáfrica</option>
+                    <option value="SC">Suecia</option>
+                    <option value="BR">Bulgaria</option>
+                    <option value="AU">Australia</option>
+                    <option value="TW">Taiwan</option>
+                    <option value="IN">Irán</option>
+                    <option value="CM">Camboya</option>
+                    <option value="FS">Filipinas</option>
+                    <option value="RR">Andorra</option>
+                    </select>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="contact-right">
+                <h2>CONTACTANOS</h2>
+                <p>Teléfono: +34 958 289 961</p>
+                <p>Dirección: Albaicín, Calle Cristo de la Yedra, Nave 1, 18012 Granada (España).</p>
+                <div id="map"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Catálogo</a></li>
+                    <li><a href="Presupuestos.html">Cesta</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>   
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quiénes somos</h3>
+                <p>Llámanos ahora: +34 958 289 961</p>
+                <p>Email: <a href="mailto:info@ggstore.es">info@ggstore.es</a></p>
+                <p><a href="Aviso-legal.html">Aviso Legal</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <div class="social-media">
+                     <a href="https://www.facebook.com/ggstorem/?locale=es_LA" class="social-link"><img src="../galeryhub/facebook.webp" alt="Facebook" id="facebook-link"></a>
+                     <a href="https://x.com/ggstore_store" class="social-link"><img src="../galeryhub/x.webp" alt="X" id="x-link"></a>
+                     <a href="https://www.instagram.com/ggstore.ar/" class="social-link"><img src="../galeryhub/instagram.webp" alt="Instagram" id="instagram-link"></a>
+                     <a href="https://www.linkedin.com/company/ggstore-net/?viewAsMember=true" class="social-link"><img src="../galeryhub/linkedin.webp" alt="LinkedIn" id="linkedin-link"></a>
+                </div>    
+                <div class="location">
+                    <h3>CENTRAL EN GRANADA</h3>
+                    <p>Calle Cristo de la Yedra</p>
+                    <p>Albaicín, 18012 Granada</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="copyright">© 2025 GG Store. Hecho por René lucas monrroy flores.</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([37.187053, -3.601757], 15);  
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var markerTienda = L.marker([37.187053, -3.601757]).addTo(map); 
+markerTienda.bindPopup('GG Store - Albaicín, Calle Cristo de la Yedra, Nave 1, 18012 Granada (España)').openPopup();
+
+
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+    var R = 6371;  
+    var dLat = (lat2 - lat1) * Math.PI / 180;
+    var dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var distancia = R * c;
+    return distancia;
+}
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            var latUsuario = position.coords.latitude;
+            var lonUsuario = position.coords.longitude;
+            
+           
+            var markerUsuario = L.marker([latUsuario, lonUsuario]).addTo(map);
+            markerUsuario.bindPopup('Tu ubicación actual').openPopup();
+            
+            
+            var distancia = calcularDistancia(latUsuario, lonUsuario, 37.187053, -3.601757);
+            
+            
+            var elementoDistancia = document.getElementById('distancia');
+            if (elementoDistancia) {
+                elementoDistancia.innerHTML = '<strong>Distancia a la tienda:</strong> ' + distancia.toFixed(2) + ' km';
+                elementoDistancia.style.marginTop = '10px';
+                elementoDistancia.style.fontWeight = 'bold';
+                elementoDistancia.style.color = '#ec407a';  
+            } else {
+                console.log('Distancia calculada: ' + distancia.toFixed(2) + ' km (agrega el div para mostrarla)');
+            }
+            
+            
+            map.fitBounds([[latUsuario, lonUsuario], [37.187053, -3.601757]]);
+        },
+        function(error) {
+            console.error('Error al obtener ubicación: ' + error.message);
+        
+            alert('No se pudo obtener tu ubicación. Por favor, habilita el GPS y recarga la página.');
+        },
+        { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 } 
+    );
+} else {
+    alert('Tu navegador no soporta geolocalización.');
+}
+</script>
+</body>
+</html>

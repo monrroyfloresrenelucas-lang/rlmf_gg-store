@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "China ya no se conforma con alejarse de NVIDIA. Su siguiente paso es el corazón de la IA con un sistema que rompe moldes",
+        "description": "En 2017, el paper “Attention Is All You Need” de Google cambió la base técnica de la generación de lenguaje."
+    },
+    {
+        "id": 2,
+        "title": "NVIDIA, TSMC y SK Hynix son las empresas de chips más poderosas del planeta. Ninguna puede permitir que alguna de las otras caiga",
+        "description": "NVIDIA domina el mercado global de los chips para inteligencia artificial (IA) con una cuota que durante los últimos tres años ha oscilado entre el 80 y el 94%, según FourWeekMBA."
+    },
+    {
+        "id": 3,
+        "title": "Creíamos que el fin del soporte de Windows 10 sería una pesadilla para Microsoft. Hay quienes apuntan a que será una mina de oro",
+        "description": "Windows 10 ya tiene marcado en rojo el 14 de octubre de 2025, día en que dejará de recibir actualizaciones si no se contrata el plan ESU. Para Microsoft, lo que parecía un problema es también un negocio. Una firma de análisis calcula que el programa podría dejar miles de millones de dólares solo en el sector corporativo."
+    }
+]

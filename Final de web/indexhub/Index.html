@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio-GG_Store</title>
+    <link rel="stylesheet" href="../csshub/styles-Index.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">GG Store</h1>
+        <nav>
+    <a href="Index.html" class="active">Inicio</a>
+    <a href="galeria.html">Catálogo</a>
+    <a href="Presupuestos.html">Cesta</a>
+    <a href="Contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>Tu solución en reparación de dispositivos comienza aquí</h2>
+        <p>Confía en nuestros expertos para reparar móviles, tablets, portátiles, patinetes y consolas de todas las marcas.</p>
+    </section>
+    <section class="why-choose-us">
+        <h2>¿Por qué elegirnos?</h2>
+        <p>En GG Store nos especializamos en la reparación de dispositivos electrónicos como móviles, tablets, portátiles, patinetes y consolas de todas las marcas. Ofrecemos un servicio de calidad y personalizado para que tus dispositivos vuelvan a funcionar como nuevos.</p>
+        <div class="choose-us-grid">
+            <div class="choose-us-item">
+                <span>✔</span>
+                <h3>Experiencia Probada</h3>
+                <p>Nuestro equipo cuenta con años de experiencia en reparaciones y conoce a fondo las tecnologías de todas las marcas.</p>
+            </div>
+            <div class="choose-us-item">
+                <span>📚</span>
+                <h3>Repuestos Actualizados</h3>
+                <p>Utilizamos piezas originales y actualizadas para garantizar la mejor calidad en cada reparación.</p>
+            </div>
+            <div class="choose-us-item">
+                <span>👥</span>
+                <h3>Atención Personalizada</h3>
+                <p>Servicio individualizado y rápido para maximizar la satisfacción de nuestros clientes.</p>
+            </div>
+        </div>
+    </section>
+    <section class="team">
+        <h2>Nuestro Equipo Técnico</h2>
+        <p>Somos un equipo de profesionales altamente cualificados y especializados en reparación de dispositivos electrónicos. Nuestro principal objetivo es ayudar a quienes necesitan soluciones rápidas y efectivas, brindándoles el mejor soporte técnico para sus móviles, tablets, portátiles, patinetes y consolas.</p>
+    </section>
+
+    <section class="tech-news">
+        <h2>Noticias de Tecnología</h2>
+        <div class="news-grid" id="news-container"></div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Catálogo</a></li>
+                    <li><a href="Presupuestos.html">Cesta</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>   
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quiénes somos</h3>
+                <p>Llámanos ahora: +34 958 289 961</p>
+                <p>Email: <a href="mailto:info@ggstore.es">info@ggstore.es</a></p>
+                <p><a href="Aviso-legal.html">Aviso Legal</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <div class="social-media">
+                     <a href="https://www.facebook.com/ggstorem/?locale=es_LA" class="social-link"><img src="../galeryhub/facebook.webp" alt="Facebook" id="facebook-link"></a>
+                     <a href="https://x.com/ggstore_store" class="social-link"><img src="../galeryhub/x.webp" alt="X" id="x-link"></a>
+                     <a href="https://www.instagram.com/ggstore.ar/" class="social-link"><img src="../galeryhub/instagram.webp" alt="Instagram" id="instagram-link"></a>
+                     <a href="https://www.linkedin.com/company/ggstore-net/?viewAsMember=true" class="social-link"><img src="../galeryhub/linkedin.webp" alt="LinkedIn" id="linkedin-link"></a>
+                </div>    
+                <div class="location">
+                    <h3>CENTRAL EN GRANADA</h3>
+                    <p>Calle Cristo de la Yedra</p>
+                    <p>Albaicín, 18012 Granada</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="copyright">© 2025 GG Store. Hecho por René lucas monrroy flores.</p>
+    </footer>
+    <script>
+        function loadNewsList() {
+            fetch("../datajson/news.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status} - Verifica que news.json esté en la misma carpeta`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Datos de news.json:', data); 
+                    const container = document.getElementById('news-container');
+                    container.innerHTML = ''; 
+                    const news = data.slice(0, 3); 
+                    if (news.length === 0) {
+                        container.innerHTML = '<p>No hay noticias disponibles.</p>';
+                        return;
+                    }
+                    news.forEach(item => {
+                        const newsDiv = document.createElement('div');
+                        newsDiv.className = 'news-item';
+                        newsDiv.innerHTML = `<h3>${item.title}</h3><p>${item.description}</p>`;
+                        newsDiv.addEventListener('click', () => loadNewsDetail(item.id));
+                        container.appendChild(newsDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al cargar las noticias:', error.message);
+                    const container = document.getElementById('news-container');
+                    container.innerHTML = `<p>Error al cargar las noticias: ${error.message}. Asegúrate de usar Live Server y que news.json exista.</p>`;
+                });
+        }
+        function loadNewsDetail(newsId) {
+            fetch("../datajson/news-details.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status} - Verifica que news-details.json esté en la misma carpeta`);
+                    }
+                    return response.json();
+                })
+                .then(details => {
+                    console.log('Datos de news-details.json:', details); 
+                    const detail = details.find(d => d.id === newsId);
+                    if (detail) {
+                        const container = document.getElementById('news-container');
+                        container.innerHTML = `
+                            <div class="news-detail">
+                                <h3>${detail.title}</h3>
+                                <p>${detail.fullDescription}</p>
+                                <button onclick="loadNewsList()">Volver</button>
+                            </div>
+                        `;
+                    } else {
+                        alert('Detalles no encontrados para la noticia con ID: ' + newsId);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cargar los detalles:', error.message);
+                    alert('Error al cargar los detalles de la noticia: ' + error.message);
+                });
+        }
+        window.onload = loadNewsList;
+    </script>
+</body>
+</html>

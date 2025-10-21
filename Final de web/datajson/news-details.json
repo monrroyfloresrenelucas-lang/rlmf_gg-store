@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "China ya no se conforma con alejarse de NVIDIA. Su siguiente paso es el corazón de la IA con un sistema que rompe moldes",
+        "fullDescription": "En 2017, el paper “Attention Is All You Need” de Google cambió la base técnica de la generación de lenguaje: los Transformers permitieron procesar secuencias largas en paralelo y escalar modelos hasta tamaños que antes eran inviables. Esa ruta de escalado ha impulsado a arquitecturas como GPT y BERT y ha convertido la autoatención en la pieza central de la IA generativa contemporánea."
+    },
+    {
+        "id": 2,
+        "title": "NVIDIA, TSMC y SK Hynix son las empresas de chips más poderosas del planeta. Ninguna puede permitir que alguna de las otras caiga",
+        "fullDescription": "NVIDIA domina el mercado global de los chips para inteligencia artificial (IA) con una cuota que durante los últimos tres años ha oscilado entre el 80 y el 94%, según FourWeekMBA. Su liderazgo se sostiene sobre un hardware muy competitivo y un ecosistema de software en el que CUDA (Compute Unified Device Architecture) tiene un rol esencial. Esta tecnología aglutina el compilador y las herramientas de desarrollo utilizados por los programadores para desarrollar su software para las GPU de NVIDIA.."
+    },
+    {
+        "id": 3,
+        "title": "Creíamos que el fin del soporte de Windows 10 sería una pesadilla para Microsoft. Hay quienes apuntan a que será una mina de oro",
+        "fullDescription": "Windows 10 ya tiene marcado en rojo el 14 de octubre de 2025, día en que dejará de recibir actualizaciones si no se contrata el plan ESU. Para Microsoft, lo que parecía un problema es también un negocio. Una firma de análisis calcula que el programa podría dejar miles de millones de dólares solo en el sector corporativo. Ante el inminente fin del soporte de Windows 10, la compañía insiste en que la mejor opción es actualizar a Windows 11, comprar nuevos equipos o usar Windows 365 para acceder al sistema en la nube. El cambio afectará tanto a empresas como a particulares, que tendrán que decidir cómo continuar. ESU es la oferta oficial de Microsoft para quienes no puedan abandonar Windows 10 en 2025. A cambio de una suscripción anual, los equipos reciben únicamente actualizaciones de seguridad críticas e importantes. No hay soporte técnico estándar ni nuevas funciones. El requisito es claro: tener instalada la versión 22H2. Microsoft lo describe como una herramienta de continuidad temporal, no como un sustituto de la migración a Windows 11."
+    }
+]
